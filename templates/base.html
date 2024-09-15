@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Meu Site{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Bem-vindo a PontoFacil</h1>
+        <!-- Aqui você pode adicionar um menu de navegação, por exemplo -->
+    </header>
+
+    <main>
+        {% block content %}
+        <!-- O conteúdo de cada página será inserido aqui -->
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2024 - Todos os direitos reservados. PontoFacil.</p>
+    </footer>
+</body>
+</html>

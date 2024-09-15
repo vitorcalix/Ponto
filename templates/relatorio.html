@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório de Ponto</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Relatório de Ponto</h1>
+    <ul>
+        {% for registro in registros %}
+            <li>{{ registro[0] }}</li>
+        {% endfor %}
+    </ul>
+    <a href="/">Voltar ao Início</a>
+</body>
+</html>

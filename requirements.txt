@@ -1,0 +1,9 @@
+pip install Flask
+pip show werkzeug
+pip install --upgrade werkzeug
+
+python criar_banco.py
+
+flask run
+
+new_venv\Scripts\activate

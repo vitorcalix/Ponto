@@ -1,0 +1,142 @@
+/* Definindo a cor de fundo para o corpo da página */
+body {
+    background-color: #f0f0f0; /* Cor de fundo clara */
+    color: #333; /* Cor do texto */
+    font-family: Arial, sans-serif; /* Fonte padrão */
+}
+
+/* Estilo para o cabeçalho */
+h1 {
+    color: #0044cc; /* Azul escuro para o título */
+}
+
+/* Estilo para os botões */
+button {
+    background-color: #008cba; /* Cor de fundo azul para botões */
+    color: white; /* Cor do texto dos botões */
+    border: none; /* Remove bordas dos botões */
+    padding: 10px 20px; /* Espaçamento interno do botão */
+    border-radius: 5px; /* Borda arredondada */
+    cursor: pointer; /* Cursor em forma de mão ao passar sobre o botão */
+}
+
+button:hover {
+    background-color: #005f73; /* Cor de fundo quando o botão é hover */
+}
+
+/* Estilo para a lista de mensagens */
+ul {
+    background-color: #ffffff; /* Fundo branco para a lista */
+    border: 1px solid #ddd; /* Borda leve ao redor da lista */
+    padding: 10px; /* Espaçamento interno da lista */
+    border-radius: 5px; /* Bordas arredondadas */
+}
+
+li {
+    margin-bottom: 10px; /* Espaçamento entre itens da lista */
+}
+
+/* Estilo para o formulário */
+form {
+    background-color: #ffffff; /* Fundo branco para o formulário */
+    padding: 20px; /* Espaçamento interno do formulário */
+    border: 1px solid #ddd; /* Borda leve ao redor do formulário */
+    border-radius: 5px; /* Bordas arredondadas */
+}
+
+label {
+    display: block; /* Exibe rótulos em bloco */
+    margin-bottom: 5px; /* Espaçamento abaixo dos rótulos */
+    color: #333; /* Cor do texto dos rótulos */
+}
+
+select, input[type="text"], input[type="password"] {
+    width: 100%; /* Largura total para campos de entrada */
+    padding: 8px; /* Espaçamento interno */
+    border: 1px solid #ddd; /* Borda leve *//* Estilo geral para o corpo da página */
+    body {
+        background-color: #f0f0f0; /* Cor de fundo clara */
+        color: #333; /* Cor do texto */
+        font-family: Arial, sans-serif; /* Fonte padrão */
+        margin: 0; /* Remove margem padrão do corpo */
+        padding: 0; /* Remove padding padrão do corpo */
+    }
+    
+    /* Estilo para o cabeçalho */
+    h1 {
+        color: #0044cc; /* Azul escuro para os títulos */
+        text-align: center; /* Alinha o título ao centro */
+        margin-top: 20px; /* Espaço acima do título */
+        margin-bottom: 20px; /* Espaço abaixo do título */
+    }
+    
+    /* Estilo para o formulário */
+    form {
+        background-color: #ffffff; /* Fundo branco para o formulário */
+        padding: 20px; /* Espaçamento interno do formulário */
+        border: 1px solid #ddd; /* Borda leve ao redor do formulário */
+        border-radius: 5px; /* Bordas arredondadas */
+        max-width: 400px; /* Largura máxima do formulário */
+        margin: 0 auto; /* Centraliza o formulário horizontalmente */
+    }
+    
+    /* Estilo para os rótulos */
+    label {
+        display: block; /* Exibe rótulos em bloco */
+        margin-bottom: 5px; /* Espaçamento abaixo dos rótulos */
+        color: #333; /* Cor do texto dos rótulos */
+    }
+    
+    /* Estilo para os campos de entrada */
+    input[type="text"], input[type="password"] {
+        width: 100%; /* Largura total para campos de entrada */
+        padding: 8px; /* Espaçamento interno */
+        border: 1px solid #ddd; /* Borda leve */
+        border-radius: 4px; /* Bordas arredondadas */
+        margin-bottom: 10px; /* Espaçamento abaixo dos campos de entrada */
+    }
+    
+    /* Estilo para os botões */
+    button {
+        background-color: #008cba; /* Cor de fundo azul para botões */
+        color: white; /* Cor do texto dos botões */
+        border: none; /* Remove bordas dos botões */
+        padding: 10px 20px; /* Espaçamento interno do botão */
+        border-radius: 5px; /* Borda arredondada */
+        cursor: pointer; /* Cursor em forma de mão ao passar sobre o botão */
+        font-size: 16px; /* Tamanho da fonte do botão */
+    }
+    
+    button:hover {
+        background-color: #005f73; /* Cor de fundo quando o botão é hover */
+    }
+    
+    /* Estilo para a lista de mensagens */
+    ul {
+        background-color: #ffffff; /* Fundo branco para a lista */
+        border: 1px solid #ddd; /* Borda leve ao redor da lista */
+        padding: 10px; /* Espaçamento interno da lista */
+        border-radius: 5px; /* Bordas arredondadas */
+        list-style-type: none; /* Remove marcadores da lista */
+        max-width: 400px; /* Largura máxima da lista */
+        margin: 0 auto; /* Centraliza a lista horizontalmente */
+    }
+    
+    /* Estilo para os itens da lista */
+    li {
+        margin-bottom: 10px; /* Espaçamento entre itens da lista */
+    }
+    
+    /* Estilo para links */
+    a {
+        color: #0044cc; /* Cor do link */
+        text-decoration: none; /* Remove o sublinhado dos links */
+    }
+    
+    a:hover {
+        text-decoration: underline; /* Sublinha o link ao passar o mouse */
+    }
+    
+    border-radius: 4px; /* Bordas arredondadas */
+    margin-bottom: 10px; /* Espaçamento abaixo dos campos de entrada */
+}

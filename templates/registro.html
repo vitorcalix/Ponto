@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>Registro de Ponto</title>
+</head>
+<body>
+    {% extends 'base.html' %}
+
+{% block title %}Registro de Ponto{% endblock %}
+
+{% block content %}
+    <h1>Registro de Ponto</h1>
+
+    {% with messages = get_flashed_messages(with_categories=True) %}
+        {% if messages %}
+            <ul>
+                {% for category, message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+    <form method="POST">
+        <label for="tipo_registro">Tipo de Registro:</label>
+        <select id="tipo_registro" name="tipo_registro">
+            <option value="entrada1">Entrada 1</option>
+            <option value="saida1">Saída 1</option>
+            <option value="entrada2">Entrada 2</option>
+            <option value="saida2">Saída 2</option>
+        </select>
+        <button type="submit">Registrar</button>
+    </form>
+
+    <!-- Adiciona o botão de logout -->
+    <form action="{{ url_for('logout') }}" method="POST">
+        <button type="submit">Sair</button>
+    </form>
+    
+    <h2>Registros do Dia</h2>
+    <ul>
+        <li>Entrada 1: {{ registros[0] }}</li>
+        <li>Saída 1: {{ registros[1] }}</li>
+        <li>Entrada 2: {{ registros[2] }}</li>
+        <li>Saída 2: {{ registros[3] }}</li>
+    </ul>
+    {% endblock %}
+</body>
+</html>
