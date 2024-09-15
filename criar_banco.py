@@ -4,7 +4,6 @@ def init_db():
     conn = sqlite3.connect('ponto.db')
     cursor = conn.cursor()
 
-    # Criação da tabela 'usuarios'
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS usuarios (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -13,7 +12,6 @@ def init_db():
         )
     ''')
 
-    # Criação da tabela 'registros'
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS registros (
             id INTEGER PRIMARY KEY AUTOINCREMENT,

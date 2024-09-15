@@ -9,12 +9,10 @@ app.secret_key = 'chave_secreta'
 if __name__ == '__main__':
     app.run(debug=True)         
 
-# Função para inicializar o banco de dados
 def init_db():
     conn = sqlite3.connect('ponto.db')
     cursor = conn.cursor()
 
-    # Criação da tabela 'usuarios' se não existir
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS usuarios (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -23,7 +21,6 @@ def init_db():
         )
     ''')
 
-    # Criação da tabela 'registros' se não existir
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS registros (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -40,10 +37,8 @@ def init_db():
     conn.commit()
     conn.close()
 
-# Inicialize o banco de dados ao iniciar a aplicação
 init_db()
 
-# Página de login
 @app.route('/', methods=['GET','POST'])
 def login():
     if request.method == 'POST':
@@ -65,7 +60,6 @@ def login():
 
     return render_template('login.html')
 
-# Página de cadastro de usuário
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     if request.method == 'POST':
@@ -91,7 +85,6 @@ def register():
 
     return render_template('register.html')
 
-# Página de registro de ponto
 @app.route('/registro', methods=['GET', 'POST'])
 def registro_ponto():
     if request.method == 'POST':
@@ -110,12 +103,10 @@ def registro_ponto():
         conn = sqlite3.connect('ponto.db')
         cursor = conn.cursor()
 
-        # Verifica se já existe um registro para o dia
         cursor.execute('SELECT * FROM registros WHERE usuario_id = ? AND data = ?', (usuario_id, data_atual))
         registro = cursor.fetchone()
 
         if registro:
-            # Atualiza o registro existente
             coluna = {
                 'entrada1': 'entrada1',
                 'saida1': 'saida1',
@@ -136,7 +127,6 @@ def registro_ponto():
             else:
                 flash('Tipo de registro inválido!')
         else:
-            # Cria um novo registro para o dia
             cursor.execute('''
                 INSERT INTO registros (usuario_id, entrada1, saida1, entrada2, saida2, data)
                 VALUES (?, ?, ?, ?, ?, ?)
@@ -172,14 +162,12 @@ def registro_ponto():
     conn.close()
 
     if registros_do_dia:
-        # Corrigido para lidar com registros nulos
         registros_do_dia = [(datetime.strptime(r, '%Y-%m-%d %H:%M:%S').strftime('%H:%M') if r else '') for r in registros_do_dia]
     else:
-        registros_do_dia = ['', '', '', '']  # Inicialize com strings vazias para entradas e saídas
+        registros_do_dia = ['', '', '', '']  
 
     return render_template('registro.html', registros=registros_do_dia)
 
-# Rota para logout
 @app.route('/logout', methods=['POST'])
 def logout():
     session.pop('usuario_id', None)
